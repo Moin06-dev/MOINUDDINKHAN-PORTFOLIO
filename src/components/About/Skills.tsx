@@ -27,7 +27,7 @@ const skillsList: string[] = [
   "PostgreSQL",
   "MySQL",
   "Php",
-  "C++"
+  "C++",
   
 ];
 
