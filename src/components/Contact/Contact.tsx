@@ -11,7 +11,7 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
 
   function handleSetCopy() {
-    navigator.clipboard.writeText("amaanmohd047@gmail.com");
+    navigator.clipboard.writeText("Moin06.dev@gmail.com");
     setCopied(true);
   }
 
