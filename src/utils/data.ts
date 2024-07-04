@@ -17,44 +17,47 @@ export type SectionName =
 
 export const projectData: ProjectType[] = [
   {
-    title: "Homecooked Theme",
+    title: "StreetWear Ecommerce",
     description:
-      "A high contrast theme for Visual Studio Code based in moonlight palette.",
-    tags: ["VS Code", "JSON"],
+      "An E-commerce platform where Gen Z can shop for the latest and trendiest clothes, shoes, jackets, and more.",
+    tags: [
+      "React", 
+      "React-router",
+      "Tailwind",
+      "nodejs",
+      "JavaScript",
+    ],
     imageSrc: "/homecooked-ss.png",
     demoLink:
-      "https://marketplace.visualstudio.com/items?itemName=MohammedAmaan.homecooked",
-    githubLink: "https://github.com/amaanmohd047/homecooked-theme",
+      "https://ecommercewebstreet.netlify.app/",
+    githubLink: "https://github.com/Moin06-dev/ecommerce-shopping-cart-main",
   },
   {
-    title: "Manoramam",
+    title: "Tools'it",
     description:
-      "A complete end-to-end solution for a boutique hotel. It contains, a user landing page, a hotel management app.",
+      "Tools'it: Your one-stop platform for essential tools including text-to-speech, password generator, to-do list with CRUD operations, and more.",
     tags: [
       "React",
       "React Query",
-      "React Router",
-      "Supabase",
       "Styled Components",
+      "Tailwind"
     ],
     imageSrc: "/manoramam-ss.png",
-    demoLink: "",
-    githubLink: "",
+    demoLink: "https://toolswebapps.netlify.app/",
+    githubLink: "https://github.com/Moin06-dev/tools",
   },
   {
-    title: "Worldwise",
+    title: "Image Search Web",
     description:
-      "An app with an interactive map that keeps tracks of your travels. You can also add notes about the place you have visited.",
+      "An Images web search platform that delivers HD photos from around the world based on your search queries, all in one place with the help of an API.",
     tags: [
-      "React",
-      "React Router",
-      "React Leaflet",
-      "Geolocation API",
-      "Context API",
-      "CSS Modules",
+     "Javascript",
+     "Html/Css",
+     "Context API",
+     "CSS Modules",
     ],
     imageSrc: "/worldwise-ss.png",
-    demoLink: "https://worldwise-vs.netlify.app/",
-    githubLink: "https://github.com/amaanmohd047/worldwise",
+    demoLink: "https://imagessearchweb.netlify.app/",
+    githubLink: "https://github.com/Moin06-dev/ImageSearchWeb",
   },
 ];

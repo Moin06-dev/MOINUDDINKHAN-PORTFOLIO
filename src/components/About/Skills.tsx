@@ -20,14 +20,14 @@ const skillsList: string[] = [
   "Git",
   "NodeJS",
   "ExpressJS",
-  "Zod",
   "MongoDB",
   "Mongoose",
-  "Prisma",
   "PostgreSQL",
   "MySQL",
   "Php",
-  "C++",
+  "vs",
+  "Git",
+  "Aws",
   
 ];
 

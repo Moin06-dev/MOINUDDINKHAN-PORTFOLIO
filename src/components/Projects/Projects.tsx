@@ -25,15 +25,15 @@ export default function Projects() {
       <div className="mt-10 mx-auto w-full flex justify-center items-center">
         {/* <a href="#"></a> */}
         <motion.span
-          className="transition-all duration-200 ease-linear"
-          onClick={() => alert("Uploading soon...")}
-          variants={fadeInAnimation}
-          initial="initial"
-          whileInView="animate"
-          viewport={{
-            once: true,
-          }}
-        >
+  className="transition-all duration-200 ease-linear"
+  onClick={() => window.open("https://github.com/Moin06-dev?tab=repositories", "_blank")}
+  variants={fadeInAnimation}
+  initial="initial"
+  whileInView="animate"
+  viewport={{
+    once: true,
+  }}
+>
           <Button type="primary">Show more</Button>
         </motion.span>
       </div>

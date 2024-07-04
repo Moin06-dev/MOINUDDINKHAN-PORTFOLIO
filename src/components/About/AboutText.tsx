@@ -26,7 +26,8 @@ const AboutText = () => {
           className="duration-150 ease-linear "
           viewport={{ once: true }}
         >
-          Hello! I'm Moinuddin Khan, a passionate developer with a Master's degree in Computer Applications (MCA) and an unwavering interest in coding and technology. My journey in the tech world is driven by a dedication to creating seamless user experiences and building resilient web applications.
+          Hello! I'm Moinuddin Khan, a passionate developer with a Master's degree in Computer Applications (MCA) and an 
+          Passion in coding and technology. My journey in the tech world is driven by a dedication to creating seamless user experiences and building resilient web applications.
         </motion.p>
         <motion.p
           variants={fadeInAnimation}
