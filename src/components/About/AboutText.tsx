@@ -14,10 +14,6 @@ const AboutText = () => {
 
       <motion.div
         className="mt-4 space-y-4 text-slate-regular text-sm sm:text-sm md:text-base lg:text-[20px]"
-        // variants={fadeInAnimation}
-        // initial="initial"
-        // whileInView="animate"
-        // viewport={{ once: true }}
       >
         <motion.p
           variants={fadeInAnimation}
@@ -26,8 +22,7 @@ const AboutText = () => {
           className="duration-150 ease-linear "
           viewport={{ once: true }}
         >
-          Hello! I'm Moinuddin Khan, a passionate developer with a Master's degree in Computer Applications (MCA) and an 
-          Passion in coding and technology. My journey in the tech world is driven by a dedication to creating seamless user experiences and building resilient web applications.
+          Hello! I'm Moinuddin Khan, a passionate developer with a Master's degree in Computer Applications (MCA) and a strong enthusiasm for coding and technology. My journey in tech is driven by a commitment to building seamless user experiences and robust web applications.
         </motion.p>
         <motion.p
           variants={fadeInAnimation}
@@ -37,7 +32,7 @@ const AboutText = () => {
           viewport={{ once: true }}
           ref={ref}
         >
-          My interest in development began during my BSc-IT studies, where I discovered the excitement of transforming ideas into interactive, real-world solutions. With a solid foundation in both frontend and backend technologies, I specialize in crafting intuitive user interfaces using frameworks like <span className={highlight}>React</span> and <span className={highlight}>Next.js</span>, and in architecting robust server-side solutions with <span className={highlight}>Node.js</span> and <span className={highlight}>Express.js</span>.
+          My interest in development began during my BSc-IT studies, where I discovered the excitement of turning ideas into interactive, real-world solutions. With a strong foundation in both frontend and backend technologies, I specialize in crafting intuitive user interfaces using frameworks like <span className={highlight}>React</span> and <span className={highlight}>Next.js</span>, and in building scalable backend services with <span className={highlight}>Node.js</span> and <span className={highlight}>Express.js</span>.
         </motion.p>
         <motion.p
           variants={fadeInAnimation}
@@ -46,7 +41,7 @@ const AboutText = () => {
           className="duration-300 ease-linear "
           viewport={{ once: true }}
         >
-          Beyond my technical expertise, I am a keen explorer of new technologies and a proactive contributor to open-source projects. Staying updated with the latest trends in the tech community fuels my drive to innovate and excel. Whether it's experimenting with cutting-edge tools or collaborating on impactful projects, I am committed to continuous learning and growth.
+          Beyond technical skills, I enjoy exploring new technologies and contributing to the open-source community. Staying updated with the latest trends fuels my motivation to learn, innovate, and collaborate on impactful projects that push my skills further.
         </motion.p>
       </motion.div>
     </article>
