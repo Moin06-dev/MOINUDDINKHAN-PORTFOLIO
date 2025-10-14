@@ -6,7 +6,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden; /* Stop sideways scroll */
-  overflow-y: hidden; /* ✅ Totally remove vertical scrollbar always */
+  overflow-y: auto; /* ✅ Totally remove vertical scrollbar always */
 }
 
 body {
