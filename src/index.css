@@ -6,6 +6,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden; /* Stop sideways scroll */
+  overflow-y: hidden; /* ✅ Totally remove vertical scrollbar always */
 }
 
 body {
@@ -16,15 +17,9 @@ body {
   font-size: 100%;
   vertical-align: baseline;
   background: #0a192f; /* Dark navy background */
-  overflow-x: hidden;  /* Prevent horizontal scroll */
-  overflow-y: auto;    /* Allow vertical scroll */
+  overflow: hidden;  /* ✅ Hide both vertical & horizontal scrollbars */
   width: 100%;
-  height: auto;
-}
-
-/* 👇 Fix: Hide scroll only during intro logo animation */
-body.loading {
-  overflow-y: hidden !important; /* ✅ Hide vertical scroll on first load */
+  height: 100vh; /* ✅ Fix height to viewport to avoid scrollbar creation */
 }
 
 /* 👇 Text utility class */
