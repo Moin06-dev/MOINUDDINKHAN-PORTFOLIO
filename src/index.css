@@ -6,6 +6,7 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden; /* remove horizontal scroll */
   overflow-y: scroll; /* allow vertical scroll */
+  -webkit-overflow-scrolling: touch; /* momentum scroll on iOS */
 }
 
 /* Hide scrollbar but allow scroll */
