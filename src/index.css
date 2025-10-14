@@ -5,26 +5,28 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden; /* remove horizontal scroll */
+  overflow-y: scroll; /* allow vertical scroll */
 }
 
+/* Hide scrollbar but allow scroll */
 body {
   margin: 0;
   padding: 0;
-  background: #0a192f;
   width: 100%;
-  min-height: 100%;   /* allow body to grow with content */
-  overflow-x: hidden; /* extra safety for horizontal scroll */
-  overflow-y: auto;   /* vertical scroll works now */
+  min-height: 100%;
+  background: #0a192f;
+  overflow-x: hidden; /* horizontal scroll gone */
+  overflow-y: scroll; /* vertical scroll works */
+  
+  /* Hide scrollbar in different browsers */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
 }
 
-/* Optional: remove extra margin on last elements */
-* {
-  box-sizing: border-box;
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
-section:last-child {
-  margin-bottom: 0; /* avoid extra space at end */
-}
 
 /* 👇 Text utility class */
 .text-vertical-lr {
