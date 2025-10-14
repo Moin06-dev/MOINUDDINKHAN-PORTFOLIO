@@ -22,6 +22,11 @@ body {
   height: auto;
 }
 
+/* 👇 Fix: Hide scroll only during intro logo animation */
+body.loading {
+  overflow-y: hidden !important; /* ✅ Hide vertical scroll on first load */
+}
+
 /* 👇 Text utility class */
 .text-vertical-lr {
   writing-mode: vertical-lr;
