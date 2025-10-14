@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 🌐 Root Scroll Setup */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden; /* Stop sideways scroll */
-  overflow-y: auto; /* ✅ Totally remove vertical scrollbar always */
+  overflow-x: hidden; /* Remove horizontal scroll */
+  overflow-y: auto;   /* Enable vertical scroll if content is long */
 }
 
 body {
@@ -16,11 +15,12 @@ body {
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: #0a192f; /* Dark navy background */
-  overflow: hidden;  /* ✅ Hide both vertical & horizontal scrollbars */
+  background: #0a192f;
   width: 100%;
-  height: 100vh; /* ✅ Fix height to viewport to avoid scrollbar creation */
+  min-height: 100%;   /* Allow body to grow with content */
+  overflow-x: hidden; /* Extra safety for horizontal scroll */
 }
+
 
 /* 👇 Text utility class */
 .text-vertical-lr {
