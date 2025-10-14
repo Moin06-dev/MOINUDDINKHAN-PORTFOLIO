@@ -2,25 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🌐 Root Scroll Setup */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Stop sideways scroll */
+}
+
 body {
   margin: 0;
   padding: 0;
   border: 0;
-  height: 100%;
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent;
-  overflow-x: hidden; /* ✅ Prevent horizontal scroll */
+  background: #0a192f; /* Dark navy background */
+  overflow-x: hidden;  /* Prevent horizontal scroll */
+  overflow-y: auto;    /* Allow vertical scroll */
+  width: 100%;
+  height: auto;
 }
 
+/* 👇 Text utility class */
 .text-vertical-lr {
   writing-mode: vertical-lr;
 }
 
+/* 🎨 Logo and Animation Styles */
 .stroke-array-start {
-  /* stroke-dasharray: 100; */
-  /* stroke-dashoffset: 5; */
   animation: line-animation 2.5s forwards, fill-anime 1.5s forwards 1.75s;
 }
 
@@ -42,38 +50,39 @@ body {
   transition: color 0.3s ease;
 }
 
+/* 💠 Logo Wrapper */
 .logo-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
+/* 🚀 Intro Logo Screen */
 .logo-container {
-  width: 100%; /* ✅ FIXED: was 100vw (causing horizontal scroll) */
+  width: 100vw;
   height: 100vh;
   background: radial-gradient(circle farthest-side, #0a192f, #0c1421);
-  /* background: #0a192f; */
-  /* background: radial-gradient(circle closest-corner at center 125px, #0a192f, #090f18); */
-  /* background: radial-gradient(circle, #0a192f, #0c1421); */
   position: fixed;
+  top: 0;
+  left: 0;
   opacity: 1;
   display: block;
+  overflow: hidden; /* prevents scrollbars during animation */
   animation: div-animation 0.5s forwards 4.5s;
+  z-index: 9999;
 }
 
-/* ✅ Animations */
+/* 🌀 Animations */
 @keyframes div-animation {
   0% {
     opacity: 1;
     display: block;
     z-index: 50;
   }
-
   90% {
     opacity: 0;
     z-index: 0;
   }
-
   100% {
     z-index: -10;
     display: none;
@@ -85,12 +94,6 @@ body {
     stroke-dashoffset: 5000;
     stroke-dasharray: 5000;
   }
-
-  85% {
-    /* stroke-dashoffset: 0; */
-    /* stroke-dasharray: 30; */
-  }
-
   100% {
     stroke-dashoffset: 0;
     stroke-dasharray: 1000;
@@ -118,27 +121,6 @@ body {
   }
 }
 
+/* 📱 Responsive (optional space for tweaks) */
 @media (min-width: 640px) {
-  /* optional responsive tweaks */
-}
-
-/* 🚫 FINAL ANTI-X-SCROLL LOCKDOWN 🚫 */
-html, body, #root {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  position: relative;
-}
-
-/* ✅ Make sure no element exceeds screen width */
-* {
-  box-sizing: border-box;
-  max-width: 100vw;
-}
-
-/* ✅ Prevent sections/divs from pushing layout */
-[data-overflow],
-.logo-container,
-div,
-section {
-  overflow-x: hidden !important;
 }
