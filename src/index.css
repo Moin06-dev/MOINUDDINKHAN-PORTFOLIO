@@ -2,41 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================================
+   GLOBAL SCROLL / PAGE
+   ========================================================= */
+
 html {
-  scroll-behavior: smooth;
-  overflow-x: hidden; /* remove horizontal scroll */
-  overflow-y: scroll; /* allow vertical scroll */
-  -webkit-overflow-scrolling: touch; /* momentum scroll on iOS */
+  overflow-x: hidden;
+  width: 100%;
 }
 
-/* Hide scrollbar but allow scroll */
 body {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   background: #0a192f;
-  overflow-x: hidden; /* horizontal scroll gone */
-  overflow-y: scroll; /* vertical scroll works */
-  
-  /* Hide scrollbar in different browsers */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+  overflow-x: hidden;
+
+  /* Hide scrollbar but keep scrolling enabled */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
+}
+
+/* Prevent accidental horizontal overflow */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 
-/* 👇 Text utility class */
+/* =========================================================
+   TEXT UTILITY
+   ========================================================= */
+
 .text-vertical-lr {
   writing-mode: vertical-lr;
 }
 
-/* 🎨 Logo and Animation Styles */
+
+/* =========================================================
+   LOGO / INTRO ANIMATIONS
+   ========================================================= */
+
 .stroke-array-start {
-  animation: line-animation 2.5s forwards, fill-anime 1.5s forwards 1.75s;
+  animation:
+    line-animation 2.5s forwards,
+    fill-anime 1.5s forwards 1.75s;
 }
 
 .logo-fill-animation {
@@ -50,6 +66,7 @@ body::-webkit-scrollbar {
   width: 18rem;
   transform: translate(-50%, -50%);
   opacity: 1;
+
   animation: logo-fade-animation 0.75s forwards 3.25s;
 }
 
@@ -57,77 +74,147 @@ body::-webkit-scrollbar {
   transition: color 0.3s ease;
 }
 
-/* 💠 Logo Wrapper */
+
+/* =========================================================
+   LOGO WRAPPER
+   ========================================================= */
+
 .logo-wrapper {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
-/* 🚀 Intro Logo Screen */
+
+/* =========================================================
+   INTRO LOGO SCREEN
+   ========================================================= */
+
 .logo-container {
   width: 100vw;
   height: 100vh;
-  background: radial-gradient(circle farthest-side, #0a192f, #0c1421);
+
+  background: radial-gradient(
+    circle farthest-side,
+    #0a192f,
+    #0c1421
+  );
+
   position: fixed;
   top: 0;
   left: 0;
+
   opacity: 1;
   display: block;
-  overflow: hidden; /* prevents scrollbars during animation */
+
+  overflow: hidden;
+
   animation: div-animation 0.5s forwards 4.5s;
+
   z-index: 9999;
 }
 
-/* 🌀 Animations */
+
+/* =========================================================
+   LOGO ANIMATIONS
+   ========================================================= */
+
 @keyframes div-animation {
   0% {
     opacity: 1;
     display: block;
     z-index: 50;
   }
+
   90% {
     opacity: 0;
     z-index: 0;
   }
+
   100% {
+    opacity: 0;
     z-index: -10;
     display: none;
   }
 }
+
 
 @keyframes line-animation {
   0% {
     stroke-dashoffset: 5000;
     stroke-dasharray: 5000;
   }
+
   100% {
     stroke-dashoffset: 0;
     stroke-dasharray: 1000;
   }
 }
 
+
 @keyframes logo-fade-animation {
   0% {
     opacity: 1;
   }
+
   87% {
     opacity: 0;
   }
+
   100% {
+    opacity: 0;
     display: none;
   }
 }
+
 
 @keyframes fill-anime {
   from {
     fill: transparent;
   }
+
   to {
     fill: #61fbd7;
   }
 }
 
-/* 📱 Responsive (optional space for tweaks) */
+
+/* =========================================================
+   PERFORMANCE / SMOOTH RENDERING
+   ========================================================= */
+
+/*
+  Avoid forcing the entire page into its own GPU layer.
+  Browser's native scrolling remains in control.
+*/
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
 @media (min-width: 640px) {
+  /* Desktop specific styles can go here */
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
