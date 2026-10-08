@@ -31,7 +31,7 @@ const AppLayout: React.FC<{
   ];
 
   /* -----------------------------------------
-     Logo timer
+     LOGO TIMER
      ----------------------------------------- */
   useEffect(() => {
     const timer = window.setTimeout(() => {
@@ -56,35 +56,51 @@ const AppLayout: React.FC<{
         to-navy-lightest
       "
     >
+      {/* =====================================
+          INTRO LOGO
+      ===================================== */}
       {displayLogo ? (
         <LogoSVG />
       ) : (
         <div className="flex flex-col items-center relative w-full">
-          {/* Side social links */}
+
+          {/* =====================================
+              SOCIAL LINKS
+          ===================================== */}
           <SocialLinks />
 
-          {/* Email */}
+          {/* =====================================
+              EMAIL
+          ===================================== */}
           <Mail />
 
-          {/* Navbar */}
+          {/* =====================================
+              NAVBAR
+          ===================================== */}
           <Navbar allRefs={allRefs} />
 
-          {/* HOME */}
+          {/* =====================================
+              HOME
+          ===================================== */}
           <header
             ref={homeRef}
-            className="max-w-[85vw] h-[100vh] min-h-[100vh]"
+            className="w-full max-w-[85vw] h-[100vh] min-h-[100vh]"
           >
             <Home contactRef={contactRef} />
           </header>
 
           <main className="w-full">
-            {/* ABOUT */}
+
+            {/* =====================================
+                ABOUT
+            ===================================== */}
             <section
               ref={aboutRef}
               className="
+                w-full
                 max-w-[85vw]
-                sm:m-auto
                 sm:max-w-[60vw]
+                mx-auto
                 scroll-mt-16
                 md:scroll-mt-24
                 text-center
@@ -93,12 +109,16 @@ const AppLayout: React.FC<{
               <About />
             </section>
 
-            {/* PROJECTS */}
+            {/* =====================================
+                PROJECTS
+            ===================================== */}
             <section
               ref={projectsRef}
               className="
+                w-full
                 max-w-[85vw]
                 sm:max-w-[60vw]
+                mx-auto
                 scroll-mt-16
                 mt-24
                 md:scroll-mt-24
@@ -107,24 +127,35 @@ const AppLayout: React.FC<{
               <Projects />
             </section>
 
-            {/* EXPERIENCE */}
-            <section ref={experienceRef}>
+            {/* =====================================
+                EXPERIENCE
+            ===================================== */}
+            <section
+              ref={experienceRef}
+              className="w-full"
+            >
               <Experience />
             </section>
+
           </main>
 
-          {/* CONTACT */}
+          {/* =====================================
+              CONTACT
+          ===================================== */}
           <footer
             ref={contactRef}
             className="
+              w-full
               max-w-[85vw]
               sm:max-w-[60vw]
+              mx-auto
               min-h-[55vh]
               pt-[6rem]
             "
           >
             <Contact />
           </footer>
+
         </div>
       )}
     </div>
